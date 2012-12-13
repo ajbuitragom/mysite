@@ -17,6 +17,14 @@ class Poll(models.Model):
     #No olvidar que cada una de las tablas que se crea contiene
     #un campo oculto que es la llave primaria (Pk)
 
+    #se define una funcion para que devuelva el valor del campo
+    #determinado. En este caso es Question,
+    def __unicode__(self):
+        #Devuelve el valor del campo question.
+        return self.question
+
+#-----------------------------------------------------------------------------------------------------
+
 #La segunda tabla de la base de datos 
 # es la de Choice, es decir, las posibles respuestas
 #que tiene el usuario para la pregunta que esta en la 
@@ -39,3 +47,9 @@ class Choice(models.Model):
     #cantidad de personas que voten por cada opcion en una 
     #pregunta
     votes = models.IntegerField()
+
+    #se define una funcion para que devuelva el valor del campo
+    #determinado. En este caso es choice,
+    def __unicode__(self):
+        #Devuelve el valor del campo choice.
+        return self.choice
