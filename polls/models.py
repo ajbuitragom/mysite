@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 # La clase de la primera tabla para la base de datos
 #que es la de Polls es decir las preguntas que va a 
 #contener la encuesta.
@@ -22,6 +24,12 @@ class Poll(models.Model):
     def __unicode__(self):
         #Devuelve el valor del campo question.
         return self.question
+    #se define una funcion para que me tome por fecha las entradas
+    #recientemente publicadas.
+    def was_published_recently(self):
+        #Devuelve un valor true or false despues de comparar la 
+        #fecha registrada con la fecha actual.
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 #-----------------------------------------------------------------------------------------------------
 
