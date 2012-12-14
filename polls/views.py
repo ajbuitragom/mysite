@@ -1,10 +1,8 @@
-from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.core.urlresolvers import reverse
 from polls.models import Choice, Poll
-from django.template import Context, loader
 from django.http import HttpResponse, Http404
 
 
