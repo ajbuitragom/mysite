@@ -1,17 +1,25 @@
-
+<!DOCTYPE HTML>
 <html lang ="es">
 <head>
-<title></title>
+<link rel="stylesheet" type="text/css" href="/static/polls/bootstrap/css/bootstrap.css"/>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>Index</title>
 </head>
-<body><h3>Pagina de respuesta.....</h3>
-{% if latest_poll_list %}
-    <ul>
-    {% for poll in latest_poll_list %}
-        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<body>
+	<div class="container">
+	<div class="hero-unit margen_top">
+		<h1>David crea</h1>
+			{% if latest_poll_list %}
+	    	<ul>
+	    	{% for poll in latest_poll_list %}
+	        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+	    	{% endfor %}
+	    	</ul>
+			{% else %}
+	    <p>No polls are available.</p>
+			{% endif %}
+	</div>
+</div>
 </body>
-<html>
+</html>
